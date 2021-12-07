@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { Menu } from '.';
+import { Menu, MenuProps } from '.';
 
 export default {
   title: 'Menu',
@@ -7,10 +7,12 @@ export default {
   args: {},
 } as Meta;
 
-export const Mobile: Story = args => <Menu {...args} />;
+export const Template: Story<MenuProps> = args => <Menu {...args} />;
 
-Mobile.parameters = {
+Template.parameters = {
+  backgrounds: { default: 'dark' },
   viewport: {
     defaultViewport: 'mobile1',
   },
+  layout: 'fullscreen',
 };
